@@ -16,7 +16,7 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
-/vendor/
+#/vendor/
 
 # ---> CVS
 /CVS/*
@@ -630,7 +630,7 @@ extras/documentation
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
 
 # Thumbnails
 ._*
