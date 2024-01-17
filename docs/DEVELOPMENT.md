@@ -81,6 +81,14 @@ Now start to edit the files inside the project.
 
 TODO
 
+Submodules were add with:
+
+```
+git submodule add -f -b codeigniter2 https://gitlab.com/codeigniterpower/codeigniterpower vendor/codeigniter2
+
+git submodule add -f -b master https://gitlab.com/codeigniterpower/codeigniterpower vendor/codeigniter3
+```
+
 ## Contributing
 
 State if you are open to contributions and what your requirements are for accepting them.
