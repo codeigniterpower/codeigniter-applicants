@@ -35,6 +35,10 @@ Remmembered to setup a password ONLY if need.
 
 > **Warning:** first you should change to the new `general` user using `su -l applicants` command
 
+```
+mkdir -p ~/Devel/ && git clone --recursive https://codeberg.org/codeigniter/codeigniter-applicants ~/Devel/codeigniter-applicants
+```
+
 
 ##### Deploy as direct service
 

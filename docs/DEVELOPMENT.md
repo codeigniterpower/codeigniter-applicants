@@ -68,6 +68,8 @@ TODO
 This project uses git management:
 
 ```
+mkdir -p ~/Devel/
+
 git clone --recursive https://codeberg.org/codeigniter/codeigniter-applicants ~/Devel/codeigniter-applicants
 
 cd ~/Devel/codeigniter-applicants && yarn install

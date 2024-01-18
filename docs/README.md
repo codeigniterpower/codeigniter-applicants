@@ -2,16 +2,13 @@
 
 Recruitment application.
 
-Is a model–view–controller (MVC) application, providing default structures 
-for a database, a web service, and web pages templates.
-
 ![](applicantsview.png)
 
 ## Getting started
 
-If you want to isntall and deploy to test this application, please read directly [DEPLOY-INSTALL.md](DEPLOY-INSTALL.md)
+If you want to isntall and deploy to test/use this application, please read directly [DEPLOY-INSTALL.md](DEPLOY-INSTALL.md)
 
-If you want to develop and contribute to the application, please read directly [DEVELOPMENT.md](DEVELOPMENT.md)
+If you want to develop/improve and contribute to the application, please read directly [DEVELOPMENT.md](DEVELOPMENT.md)
 
 Already a pro? Just clone and setup your own.
 
