@@ -1,7 +1,22 @@
 
 This file is used only for some data notes, please read [DEVELOPMENT.md](DEVELOPMENT.md)
 
+## Vacancies
+
+Each job vacancy has only three elements, the title, the content and the tags 
+that serve as a category and filtering of these, which is separate from the number 
+or users who applied for each one.
+
+The table data of `nom_vacancies` will index the links to users that applied, the 
+respective details of the vacancy and the tags/categories/filters for.
+
+Its basically the pivot table.
+
 ## Categories and applicants
+
+They are managed within the tag data table, each vacancy can apply more than 
+one tag of this handle, one or more filters would be applied in combination, 
+simplifying the logic.
 
 | Categorias       | aplicativas                                                            |
 | ---------------- | ---------------------------------------------------------------------- |
@@ -19,6 +34,11 @@ This file is used only for some data notes, please read [DEVELOPMENT.md](DEVELOP
 
 
 ## Banks
+
+There is no table for banks, but by definition its readed from predefined files, 
+so each user only has one account per session, the system can be linked to the others 
+ERP modules to permit a more featured details of each users. The list of banks are 
+predefined on each country, we here listed some of thems:
 
 | id | cta  |  Nombre banco                                           |
 | -- | ---- | ------------------------------------------------------- |
@@ -52,6 +72,8 @@ This file is used only for some data notes, please read [DEVELOPMENT.md](DEVELOP
 
 
 ## Some stores places
+
+The application does not managed (yet) locations
 
 | Store possible    | City                  | State        | Country       |
 | ----------------- | --------------------- | ------------ | ------------- |

@@ -5,8 +5,6 @@ Recruitment application.
 Is a model–view–controller (MVC) application, providing default structures 
 for a database, a web service, and web pages templates.
 
-Data is made using ORM model approach, but you can find a minimal Workbench desing [applicantsdb.mwb](applicantsdb.mwb)
-
 ![](applicantsview.png)
 
 ## Getting started
@@ -33,6 +31,14 @@ At the mnager side, just check the list of people that already fill such info, a
 usefully for work or not, later can bypass the data and create new vacancies.
 
 ![](applicantslist.png)
+
+### Database dictionary
+
+Could be found at the file [applicantsdb.sql](applicantsdb.sql)
+but you can find a minimal Workbench desing [applicantsdb.mwb](applicantsdb.mwb)
+
+
+![](applicantsdb.png)
 
 ## LICENSE
 
