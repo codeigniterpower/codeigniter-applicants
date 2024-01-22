@@ -96,7 +96,7 @@ $db['mysql'] = array(
 );
 
 $db['sqlite'] = array(
-	'dsn'	=> 'sqlite:'.APPPATH.'/codeigniter.db',
+	'dsn'	=> 'sqlite:'.APPPATH.'/../vendor/codeigniter.db',
 	'hostname' => '',
 	'username' => '',
 	'password' => '',

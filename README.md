@@ -24,8 +24,8 @@ usefully for work or not, later can bypass the data and create new vacancies.
 ## Getting started
 
 Is a model–view–controller (MVC) application, providing default structures 
-for a database, a web service, and web pages templates. **It does not forced the MVC model so 
-this is perfectly to adopt for any contributor!**
+for a database, a web service, and web pages templates. **It does not forced the 
+MVC model so this is perfectly to adopt for any contributor!**
 
 Database Workbench desing [docs/applicantsdb.mwb](docs/applicantsdb.mwb) only for informational purposes, 
 the model may change in time so better to check the files over docs directory..

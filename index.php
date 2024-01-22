@@ -120,7 +120,7 @@ switch (ENVIRONMENT)
  *
  * NO TRAILING SLASH!
  */
-	$application_folder = 'webappweb';
+	$application_folder = 'application';
 
 /*
  *---------------------------------------------------------------
@@ -147,7 +147,7 @@ switch (ENVIRONMENT)
  *
  * NO TRAILING SLASH!
  */
-	$assets_folder = 'webappwebfiles';
+	$assets_folder = 'assets';
 
 
 /*
