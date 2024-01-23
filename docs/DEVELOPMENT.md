@@ -99,6 +99,15 @@ cd ~/Devel/codeigniter-applicants && yarn install
 
 Now start to edit the files inside the project.
 
+#### Profiler and debugging
+
+Debugging is using our profiler, it requires a special view which is now part of 
+the project so it is provided as an extra file in the `application/views` directory
+
+It can be simply disabled in the controller constructor, but can also autodetected 
+if must need by using ENV_DEVEL or ENV_PROD, if ENV_PROD is present.. production 
+mode will be active and profiler debbuger will be disabled!
+
 ### WORKING WITH FILES
 
 TODO

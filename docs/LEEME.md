@@ -2,13 +2,10 @@
 
 Sistema de Solicitud de contratación.
 
+Este documento esta dividido en dos grandes secciones, la seccion funcional 
+generalizada, y la seccion principal tecnica de el proyecto al final del mismo.
+
 ![](applicantsview.png)
-
-## Empezando
-
-Si desea instalar e implementar para probar/usar esta aplicación, lea directamente [DEPLOY-INSTALL.md](DEPLOY-INSTALL.md)
-
-Si desea desarrollar/mejorar y contribuir a la aplicación, lea directamente [DEVELOPMENT.md](DEVELOPMENT.md)
 
 ## Acerca de este sistema
 
@@ -27,7 +24,6 @@ del mismo, el sistema es auto explicativo pero se proveera una ayuda**.
 - 20231205: Lenz Gerardo, Reinicio del proyecto con nuevos desarrolladores mas responsables
 - 20240110: inicio de nuevo codigo con desarrollador nuevo Diaz Victor y Tyrone Lucero
 - 20240117: pantallas de interfaces diseñadas por Diaz Victor
-
 
 ## Introducción y descripcion de la idea
 
@@ -87,6 +83,8 @@ en escritorio y una columna en mobil, pero dado el contenido deberia ser maximo
 tres columnas; la cantidad de filas es dinamica estilo twitter.
 
 ![](applicantsview.png)
+
+![](applicantslist.png)
 
 El postulante o cualquier usuario registrado o no, puede ingresar, escoger y 
 postularse, sin ingresar autenticacion alguna, esta se requerira segun la 
@@ -148,6 +146,9 @@ implica el uso de dominios, haciendo mas complicado esto, con un bug presente:
 https://github.com/stimulusreflex/stimulus_reflex/issues/666 al no ejecutarse 
 nada bien y requerir entendimiento no claro.
 
+Todas estas conllevaron a realizar enteramente desde cero el sistema en el mas facil 
+framework de todos los tiempos: codeigniter.
+
 ## Control de cambios
 
 ```
@@ -170,13 +171,6 @@ Date:   Wed Jan 17 16:53:56 2024 -0400
 
 ```
 
-## Diccionario de base de datos
-
-Se puede encontrar en el archivo [applicantsdb.sql](applicantsdb.sql)
-pero puedes encontrar un diseño mínimo de Workbench [applicantsdb.mwb](applicantsdb.mwb)
-
-![](applicantsdb.png)
-
 # Descripcion tecnica
 
 La aplicación emplea una base de datos para un almacenamiento mínimo de datos; 
@@ -192,7 +186,16 @@ En el lado del administrador, simplemente consulte la lista de personas que ya
 completan dicha información y marque cuáles son útil para trabajar o no, luego 
 puede omitir los datos y crear nuevas vacantes.
 
-![](lista de solicitantes.png)
+Si desea instalar e implementar para probar/usar esta aplicación, lea directamente [DEPLOY-INSTALL.md](DEPLOY-INSTALL.md)
+
+Si desea desarrollar/mejorar y contribuir a la aplicación, lea directamente [DEVELOPMENT.md](DEVELOPMENT.md)
+
+## Diccionario de base de datos
+
+Se puede encontrar en el archivo [applicantsdb.sql](applicantsdb.sql)
+pero puedes encontrar un diseño mínimo de Workbench [applicantsdb.mwb](applicantsdb.mwb)
+
+![](applicantsdb.png)
 
 # LICENCIA
 
