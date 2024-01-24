@@ -73,12 +73,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-$db['mysql'] = array(
+$db['nom_applicants'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => 'root',
-	'database' => 'codeigniter',
+	'database' => 'nom_applicants', // 'sqlite:'.APPPATH.'/../vendor/nom_applicants.db',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -95,26 +95,4 @@ $db['mysql'] = array(
 	'save_queries' => (ENVIRONMENT !== 'production')
 );
 
-$db['sqlite'] = array(
-	'dsn'	=> 'sqlite:'.APPPATH.'/../vendor/codeigniter.db',
-	'hostname' => '',
-	'username' => '',
-	'password' => '',
-	'database' => '',
-	'dbdriver' => 'pdo', // pdo only for CI3, for CI2 use mysql/postgres/odbc
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => (ENVIRONMENT !== 'production')
-);
-
-$db['default'] = $db['sqlite'];
+$db['default'] = $db['nom_applicants'];

@@ -7,6 +7,12 @@ class Indexauth extends CP_Controller {
 		parent::__construct();
 	}
 
+	/**
+	 * default index
+	 * @name: index
+	 * @param $data (MIXED)
+	 * @return void
+	 */
 	public function index($data = NULL)
 	{
 		$this->load->view('header.php',$data);
@@ -14,6 +20,12 @@ class Indexauth extends CP_Controller {
 		$this->load->view('footer.php',$data);
 	}
 
+	/**
+	 * check authentication, redirects to valid view if success
+	 * @name: auth
+	 * @param $action (STRING), $username (STRING), $userclave (STRING)
+	 * @return void
+	 */
 	public function auth($action = 'logout', $username = NULL, $userclave = NULL)
 	{
 		if($username == NULL)
@@ -23,15 +35,24 @@ class Indexauth extends CP_Controller {
 
 		if ( $action == 'login' )
 		{
+			$this->config->load('auth');
+			
 			$this->load->model('usersmodel');
 			
-			$im_access = TRUE;//$this->usersmodel->loginimap($username, $userclave);
+			$ap_access = $this->usersmodel->loginapi($username, $userclave);
 			
 			$rs_access = $this->usersmodel->logindb($username, $userclave);
+			
+			$authmode = config_item('auth_type');
+			
+			if($authmode == 'dummy' AND (ENVIRONMENT !== 'production'))
+				$authmode = TRUE;
+			else if ($rs_access AND $ap_access)
+				$authmode = TRUE;
 		}
 
 		$data = array();
-		if($rs_access AND $im_access)
+		if($authmode)
 		{
 			$this->session->set_userdata('userdata', $rs_access);
 			redirect('Indexhome');

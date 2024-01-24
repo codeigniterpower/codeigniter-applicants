@@ -15,9 +15,9 @@ DROP TABLE IF EXISTS `nom_user_registers` ;
 CREATE TABLE IF NOT EXISTS `nom_user_registers` (
   `cod_user` VARCHAR(80) NOT NULL COMMENT 'named ic or passport code or licence number depends of country',
   `email` VARCHAR(80) NULL DEFAULT NULL COMMENT 'identification login of the user as alternate',
-  `password` VARCHAR(80) NULL DEFAULT NULL COMMENT 'passowrd encripted by the framework',
+  `userpass` VARCHAR(80) NULL DEFAULT NULL COMMENT 'passowrd encripted by the framework',
   `api_token` VARCHAR(80) NULL DEFAULT NULL COMMENT 'api key for non password usage',
-  `level` VARCHAR(80) NULL DEFAULT NULL COMMENT 'from 0 as invited applicant or 1 as registered user or 5 as manager of vacancies',
+  `userlevel` VARCHAR(80) NULL DEFAULT NULL COMMENT 'from 0 as invited applicant or 1 as registered user or 5 as manager of vacancies',
   `created_at` VARCHAR(80) NOT NULL COMMENT 'YYYYMMDDHHmmss date creation of',
   `updated_at` VARCHAR(80) NOT NULL COMMENT 'YYYYMMDDHHmmss date change of',
   PRIMARY KEY (`cod_user`))
@@ -94,7 +94,6 @@ CREATE TABLE IF NOT EXISTS `nom_vacancies` (
   `created_at` VARCHAR(80) NOT NULL COMMENT 'YYYYMMDDHHmmss date creation of',
   `updated_at` VARCHAR(80) NOT NULL COMMENT 'YYYYMMDDHHmmss date change of',
   PRIMARY KEY (`cod_vacancies`, `cod_vacancies_tag`))
-ENGINE = InnoDB
 COMMENT = 'main table of vacancies';
 
 
@@ -110,6 +109,5 @@ CREATE TABLE IF NOT EXISTS `nom_vacancies_applicants` (
   `created_at` VARCHAR(80) NOT NULL COMMENT 'YYYYMMDDHHmmss date creation of',
   `updated_at` VARCHAR(80) NOT NULL COMMENT 'YYYYMMDDHHmmss date change of',
   PRIMARY KEY (`cod_vacancies`, `cod_user`))
-ENGINE = InnoDB
 COMMENT = 'amount of users that applies to vacancies';
 
