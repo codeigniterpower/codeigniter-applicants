@@ -137,9 +137,9 @@ class Usersmodel extends CI_Model
 
 		if($cod_user !== NULL)
 		{
-			$validu = $this->form_validation->required($username);
-			$validu = $this->form_validation->alpha_dash($username);
-			$validu = $this->form_validation->max_length($username,60);
+			$validu = $this->form_validation->required($cod_user);
+			$validu = $this->form_validation->alpha_dash($cod_user);
+			$validu = $this->form_validation->max_length($cod_user,60);
 		}
 
 		if($validu == FALSE) return FALSE;
