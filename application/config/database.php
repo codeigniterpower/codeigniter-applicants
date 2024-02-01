@@ -73,12 +73,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-$db['nom_applicants'] = array(
+$db['nom_applicantsdb'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => 'root',
-	'database' => 'nom_applicants', // 'sqlite:'.APPPATH.'/../vendor/nom_applicants.db',
+	'database' => 'nom_applicantsdb', // 'sqlite:'.APPPATH.'/../vendor/nom_applicantsdb.db',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -95,4 +95,4 @@ $db['nom_applicants'] = array(
 	'save_queries' => (ENVIRONMENT !== 'production')
 );
 
-$db['default'] = $db['nom_applicants'];
+$db['default'] = $db['nom_applicantsdb'];
