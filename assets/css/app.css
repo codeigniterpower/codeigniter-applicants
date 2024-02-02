@@ -1,0 +1,353 @@
+/**!
+ * @package   Applicants
+ * @filename  app.css
+ * @version   1.0
+ * @author    Díaz Urbaneja Víctor Eduardo Diex <diazvictor@tutamail.com>
+ * @date      17.01.2024 20:11:19 -04
+ */
+
+:root {
+	--tjz-green: #7DC154;
+	--tjz-green-hover: #62B533;
+}
+
+body {
+    color: #4a4a4a;
+    background-color: hsl(0, 0%, 98%);
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+#app {
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas: "navbar navbar"
+						 "main   main  "
+						 "footer footer";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: auto 1fr;
+}
+
+.divider {
+    border-top: 2px solid #f5f5f5;
+}
+
+section.section.is-main-section {
+    padding: calc(1.5rem + 57px) 1.5rem 1.5rem 1.5rem;
+}
+
+main {
+    grid-area: main;
+}
+
+/* =============================================== */
+/* = Sidebar = */
+/* =============================================== */
+
+.sidebar {
+    grid-area: sidebar;
+    display: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    padding: 0;
+    box-shadow: none;
+    background: #2e323a;
+}
+
+.sidebar.is-expanded {
+    width: 14rem;
+}
+
+.sidebar .title {
+    padding: 0 0.75rem;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    color: hsl(0, 0%, 96%);
+}
+
+.sidebar .menu-label {
+    padding: 0 0.75rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.sidebar .menu-list {
+    line-height: 1.25;
+}
+
+.sidebar .menu-list li ul {
+    display: none;
+    border-left: 0;
+    background-color: #282c33;
+    padding-left: 0;
+    margin: 0 0 0.75rem;
+}
+
+.sidebar .menu-list li ul li a {
+    padding: 0.75rem 0 0.75rem 0.75rem;
+    font-size: 0.95rem;
+}
+
+.sidebar .menu-list li ul li a.has-icon {
+    padding-left: 0;
+}
+
+.sidebar .menu-list li ul li a.is-active:not(:hover) {
+    background: rgba(0, 0, 0, 0);
+}
+
+.sidebar .menu-list a {
+    border-radius: 0;
+    color: #727c8f;
+    display: block;
+    padding: 0.5rem 0;
+}
+
+.sidebar .menu-list a.has-dropdown-icon {
+    position: relative;
+    padding-right: 3rem;
+}
+
+.sidebar .menu-list a.has-dropdown-icon .dropdown-icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+}
+
+.sidebar .menu-list a:hover {
+    background-color: #262930;
+    color: hsl(0, 0%, 96%);
+}
+
+.sidebar .menu-list a.is-active {
+    background-color: #282c33;
+    color: hsl(0, 0%, 96%);
+}
+
+@media screen and (min-width: 1024px) {
+    html.has-sidebar-left nav.navbar,
+    html.has-sidebar-left body {
+        transition: padding-left 250ms ease-in-out 50ms;
+    }
+
+    html.has-sidebar-left .sidebar.is-placed-left {
+        display: block;
+    }
+
+    html.has-sidebar-left .sidebar.is-expanded {
+        width: 14rem;
+    }
+
+    html.has-sidebar-left .sidebar.is-expanded .menu-list .icon {
+        width: 3rem;
+    }
+
+    html.has-sidebar-left .sidebar.is-expanded .menu-list .icon.has-update-mark:after {
+        right: 0.65rem;
+    }
+
+    html.has-sidebar-left .sidebar.is-expanded .menu-list span.menu-item-label {
+        display: inline-block;
+    }
+
+    html.has-sidebar-left .sidebar.is-expanded li.is-active ul {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    #app,
+    nav.navbar {
+        transition: margin-left 250ms ease-in-out 50ms;
+    }
+
+    html.has-sidebar-left .sidebar {
+        height: 100vh;
+        transition: left 250ms ease-in-out 50ms;
+    }
+
+    html.has-sidebar-left .sidebar.is-placed-left {
+        display: block;
+    }
+
+    html.has-sidebar-mobile-transition body {
+        overflow-x: hidden;
+    }
+
+    html.has-sidebar-mobile-transition body,
+    html.has-sidebar-mobile-transition #app,
+    html.has-sidebar-mobile-transition nav.navbar {
+        width: 100vw;
+    }
+
+    html.has-sidebar-mobile-transition #app {
+        height: 100vh;
+        grid-template-areas: "navbar navbar navbar" "main   main   main" "footer footer footer";
+    }
+
+    html.has-sidebar-mobile-transition .sidebar {
+        width: 14rem;
+        position: fixed;
+        display: block;
+        left: -15rem;
+    }
+
+    html.has-sidebar-mobile-transition .sidebar .menu-list a .icon {
+        width: 3rem;
+    }
+
+    html.has-sidebar-mobile-transition .sidebar .menu-list a .icon.has-update-mark:after {
+        right: 0.65rem;
+    }
+
+    html.has-sidebar-mobile-transition .sidebar .menu-list a span.menu-item-label {
+        display: inline-block;
+    }
+
+    html.has-sidebar-mobile-transition .sidebar .menu-list li.is-active ul {
+        display: block;
+    }
+
+    html.has-sidebar-mobile-expanded #app {
+        grid-template-areas: "sidebar navbar navbar" "sidebar main   main  " "sidebar footer footer";
+    }
+
+    html.has-sidebar-mobile-expanded #app {
+        margin-left: 14rem;
+    }
+
+    html.has-sidebar-mobile-expanded .sidebar {
+        left: 0;
+    }
+}
+
+/* =============================================== */
+/* = Navbar = */
+/* =============================================== */
+
+html.has-navbar-fixed-top,
+body.has-navbar-fixed-top {
+    padding-top: 0;
+}
+
+.navbar {
+    grid-area: navbar;
+    border-bottom: 1px solid rgba(24, 28, 33, 0.08);
+}
+
+.navbar .navbar-item {
+    padding-right: 1.125rem;
+    padding-left: 1.125rem;
+    border-left: 1px solid rgba(219, 219, 219, 0.25);
+}
+
+.navbar .navbar-item.has-control {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#navbar-bars .icon i {
+	font-family: "Font Awesome 6 Free";
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 900;
+	line-height: 1;
+	text-rendering: auto;
+}
+
+#navbar-bars .icon i::before {
+	content: "\f0c9"
+}
+
+#navbar-bars.is-active .icon i::before {
+	content: "\f00d"
+}
+
+.navbar .navbar-menu {
+    box-shadow: none;
+    border-top: 1px solid rgba(24, 28, 33, 0.08);
+}
+
+/*
+.navbar .navbar-menu .navbar-end .navbar-item .field.is-grouped {
+	justify-content: space-around;
+}
+*/
+
+.navbar .navbar-item .control .input {
+    color: #363636;
+    border: 0;
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0);
+}
+
+@media screen and (min-width: 1024px) {
+    .navbar .navbar-item.is-desktop-icon-only span:not(.icon) {
+        display: none;
+    }
+}
+
+/* =============================================== */
+/* = Footer = */
+/* =============================================== */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    grid-area: footer;
+    background-color: hsl(0, 0%, 100%);
+    padding: 1rem;
+    border-top: 1px solid rgba(24, 28, 33, 0.08);
+}
+
+.footer .social {
+	gap: 0.5rem;
+}
+
+@media screen and (max-width: 425px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 0.5rem;
+    }
+}
+
+/* =============================================== */
+/* = Custom styles = */
+/* =============================================== */
+
+a {
+	color: var(--tjz-green);
+}
+
+a:hover {
+	color: var(--tjz-green-hover);
+}
+
+.button.is-success {
+	background-color: var(--tjz-green);
+}
+
+.button.is-success:hover, .button.is-success:active {
+	background-color: var(--tjz-green-hover);
+}
+
+.button.is-success.is-focused:not(:active), .button.is-success:focus:not(:active) {
+	box-shadow: 0 0 0 .125em rgba(98, 181, 51, 0.25);
+}
+
+.box {
+	box-shadow: none;
+	border-radius: 1rem;
+	border: 1px solid rgba(24, 28, 33, 0.08);
+}
+
+.truncate {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
