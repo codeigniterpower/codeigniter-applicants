@@ -8,7 +8,6 @@ class Apisuitor extends CP_Controller {
 		parent::__construct();
 		//$this->checksession();
 		$this->load->library('form_validation');
-		$this->load->library('form_validation');
 		$this->load->helper('backguardphp');
 	}
 
@@ -16,7 +15,7 @@ class Apisuitor extends CP_Controller {
 	public function index()
 	{
 		$data['status'] = 405;
-		$data['response'] = "no valid auth token";
+		$data['response'] = "no valid auth token, and no api call valid";
 		$this->outputresults($data);
 	}
 

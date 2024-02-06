@@ -47,7 +47,7 @@ class Vacancymodel extends CI_Model
 	 * complete vacancies data of jobs proposals
 	 * @name: vacancies_jobs
 	 * @param $cod_vacancies (STRING), $parameters (ARRAY(MIXED))
-	 * @return ARRAY (1->(col:value,col:value...), 2->.. 3->...)
+	 * @return ARRAY (1->(col:value,col:value...), 2->.. 3->...) vacancy props recently created but various element
 	 */
 	public function vacancies_jobs($cod_vacancies = NULL, $parameters = NULL)
 	{
@@ -112,7 +112,7 @@ class Vacancymodel extends CI_Model
 	 * using a job vacancy: list of prospects who applied for a job vacancy
 	 * @name: vacancies_applicants
 	 * @param $cod_vacancies (STRING), $parameters (ARRAY(MIXED))
-	 * @return ARRAY (1->(col:value,col:value...), 2->.. 3->...)
+	 * @return ARRAY (1->(col:value,col:value...), 2->.. 3->...) user props but various elements
 	 */
 	public function vacancies_applicants($cod_vacancies = NULL, $parameters = NULL)
 	{
@@ -176,7 +176,7 @@ class Vacancymodel extends CI_Model
 	 * using a employee: list of vacancies who applied the current prospect
 	 * @name: applicants_vacancies
 	 * @param $cod_user (STRING), $parameters (ARRAY(MIXED))
-	 * @return ARRAY (1->(col:value,col:value...), 2->.. 3->...)
+	 * @return ARRAY (1->(col:value,col:value...), 2->.. 3->...) vacancy props in varous elements
 	 */
 	public function applicants_vacancies($cod_user = NULL, $parameters = NULL)
 	{
@@ -234,6 +234,98 @@ class Vacancymodel extends CI_Model
 			$this->last_count = count($array_result);
 		log_message('info', __METHOD__ .' ended with '.print_r($array_result,TRUE));
 		return $array_result;
+	}
+
+	/**
+	 * using a employee: create a new job
+	 * @name: vacancies_new
+	 * @param $cod_user (STRING), $cod_vacancies (STRING), $parameters (ARRAY(MIXED))
+	 * @return ARRAY (1->(col:value,col:value...), 2->.. 3->...) vacancy props new created but only one element
+	 */
+	public function vacancies_new($cod_user = NULL, $cod_vacancies = NULL, $parameters = NULL)
+	{
+		$validu = FALSE;
+		$this->last_count = 0;
+
+		if($cod_vacancies !== NULL)
+		{
+			$validu = $this->form_validation->required($cod_user);
+			$validu = $this->form_validation->alpha_dash($cod_user);
+			$validu = $this->form_validation->max_length($cod_user,60);
+		}
+
+		if($validu == FALSE) return FALSE;
+// TODO
+		return array();
+	}
+
+	/**
+	 * using a employee: delete an unpublished job
+	 * @name: vacancies_del
+	 * @param $cod_user (STRING), $cod_vacancies (STRING), $parameters (ARRAY(MIXED))
+	 * @return ARRAY (1->(col:value,col:value...), 2->.. 3->...) vacancy props new created but only one element
+	 */
+	public function vacancies_del($cod_user = NULL, $cod_vacancies = NULL, $parameters = NULL)
+	{
+		$validu = FALSE;
+		$this->last_count = 0;
+
+		if($cod_vacancies !== NULL)
+		{
+			$validu = $this->form_validation->required($cod_user);
+			$validu = $this->form_validation->alpha_dash($cod_user);
+			$validu = $this->form_validation->max_length($cod_user,60);
+		}
+
+		if($validu == FALSE) return FALSE;
+// TODO
+		return array();
+	}
+
+	/**
+	 * using a employee: publish a new created job, once publised it cannot deleted
+	 * @name: vacancies_set
+	 * @param $cod_user (STRING), $cod_vacancies (STRING), $parameters (ARRAY(MIXED))
+	 * @return ARRAY (1->(col:value,col:value...), 2->.. 3->...) vacancy props new created but only one element
+	 */
+	public function vacancies_set($cod_user = NULL, $cod_vacancies = NULL, $parameters = NULL)
+	{
+		$validu = FALSE;
+		$this->last_count = 0;
+
+		if($cod_vacancies !== NULL)
+		{
+			$validu = $this->form_validation->required($cod_user);
+			$validu = $this->form_validation->alpha_dash($cod_user);
+			$validu = $this->form_validation->max_length($cod_user,60);
+		}
+
+		if($validu == FALSE) return FALSE;
+// TODO
+		return array();
+	}
+
+	/**
+	 * using a employee: modification of a job.. if published onlyu can modify the large title and end date
+	 * @name: vacancies_mod
+	 * @param $cod_user (STRING), $cod_vacancies (STRING), $parameters (ARRAY(MIXED))
+	 * @return ARRAY (1->(col:value,col:value...), 2->.. 3->...) vacancy props new created but only one element
+	 */
+	public function vacancies_mod($cod_user = NULL, $cod_vacancies = NULL, $parameters = NULL)
+	{
+		$validu = FALSE;
+		$this->last_count = 0;
+
+		if($cod_vacancies !== NULL)
+		{
+			$validu = $this->form_validation->required($cod_user);
+			$validu = $this->form_validation->alpha_dash($cod_user);
+			$validu = $this->form_validation->max_length($cod_user,60);
+		}
+
+		if($validu == FALSE) return FALSE;
+// TODO
+		return array();
 	}
 
 }

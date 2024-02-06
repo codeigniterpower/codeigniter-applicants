@@ -194,6 +194,53 @@ class Usersmodel extends CI_Model
 		return $array_result;
 	}
 
+	/**
+	 * register into the database.. thos does not create the auth of user/password just insert the entry to
+	 * @name: usernew
+	 * @param $cod_user (STRING), $parameters (ARRAY(MIXED))
+	 * @return ARRAY (1->(col:value,col:value...), 2->.. 3->...) vacancy props new created but only one element
+	 */
+	public function usernew($cod_user = NULL, $parameters = NULL)
+	{
+		$validu = FALSE;
+		$this->last_count = 0;
+
+		if($cod_vacancies !== NULL)
+		{
+			$validu = $this->form_validation->required($cod_user);
+			$validu = $this->form_validation->alpha_dash($cod_user);
+			$validu = $this->form_validation->max_length($cod_user,60);
+		}
+
+		if($validu == FALSE) return FALSE;
+// TODO
+		return array();
+	}
+
+	/**
+	 * create the profile details of the user
+	 * @name: vacancies_new
+	 * @param $cod_user (STRING), $cod_vacancies (STRING), $parameters (ARRAY(MIXED))
+	 * @return ARRAY (1->(col:value,col:value...), 2->.. 3->...) vacancy props new created but only one element
+	 */
+	public function userprofile($cod_user = NULL, $parameters = NULL)
+	{
+		$validu = FALSE;
+		$this->last_count = 0;
+
+		if($cod_vacancies !== NULL)
+		{
+			$validu = $this->form_validation->required($cod_user);
+			$validu = $this->form_validation->alpha_dash($cod_user);
+			$validu = $this->form_validation->max_length($cod_user,60);
+		}
+
+		if($validu == FALSE) return FALSE;
+// TODO
+		return array();
+	}
+
+
 }
 
 ?>
