@@ -3,49 +3,84 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 $this->load->helper('html');
 
-		$metaline1 = array('name' => 'description', 'content' => 'Codeigniter powered with steroids series 2.X');
-		$metaline2 = array('name' => 'keywords', 'content' => 'system, admin, catalogo, sistemas');
-		$metaline3 = array('name' => 'Content-type', 'content' => 'text/html; charset='.config_item('charset'), 'type' => 'equiv');
-		$metaline4 = array('name' => 'Cache-Control', 'content' => 'no-cache, no-store, must-revalidate, max-age=0, post-check=0, pre-check=0', 'type' => 'equiv');
-		$metaline5 = array('name' => 'Last-Modified', 'content' => gmdate("D, d M Y H:i:s") . ' GMT', 'type' => 'equiv');
-		$metaline6 = array('name' => 'pragma', 'content' => 'no-cache', 'type' => 'equiv');
-		$metalines = array('name' => 'Content-Security-Policy', 'content' => '');
-		$meta = array( $metaline1, $metaline2, $metaline3, $metaline4, $metaline5, $metaline6 );
+		$metaline1 = array('name' => 'description', 'content' => 'codeigniter-applicants - Recruitment system to manage job vacancies and job applicants - future employees - futuros empleados y organizacion de prospectos');
+		$metaline2 = array('name' => 'keywords', 'content' => 'system, admin, catalogo, sistemas, recruitment, reclutamiento, sistema, rrhh, vacancy, employees, postulants, applicants');
+		$metaline3 = array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1');
+		$metaline4 = array('name' => 'copyright', 'content' => '(c) 2024 Diaz Victor / mckaygerhard ');
+		$metaline5 = array('name' => 'dcterms.rightsHolder', 'content' => 'Diaz Victor / mckaygerhard ');
+		$metaline6 = array('name' => 'dcterms.dateCopyrighted', 'content' => '2024');
+		$metaline7 = array('charset' => config_item('charset'));
+		$meta = array( $metaline1, $metaline2, $metaline3, $metaline4, $metaline5, $metaline6, $metaline7 );
 
-		$pathcss = base_url() . SYSDIR . '/styles/'; $typcs='text/css';
-		$pathjsc = base_url() . SYSDIR . '/scripts/'; $typjs='text/javascript';
+		if( !isset($page_css) ) $page_css=array('app.css','bulma.min.css','fontawesome.min.css');
+		if( !isset($page_title) ) $page_title="applicants";
 
-		$linkappcss = array('type'=>$typcs,'rel'=>'stylesheet','href' => $pathcss.'cibootstrap.css?'.time()); // script de css sin tener que especificar clases en cada tag
-		$linkappcssjs = array('type'=>$typjs,'src' => $pathjsc.'cibootstrap.js?'.time()); // script de css sin tener que especificar clases en cada tag
-
-		$linkdatepickerurl = array('type'=>$typjs,'src' => $pathjsc.'datetimepicker.js?'.time());
-		$linkpickathingcss = array('type'=>$typcs,'rel'=>'stylesheet','href' => $pathcss.'pickathing.css?'.time()); // script de css para selects combos pero con inputs search
-		$vanilladatatablescss = array('type'=>$typcs,'rel'=>'stylesheet','href' => $pathcss.'vanilla-dataTables.css?'.time()); // script de css para vanilla data tables
-
-		$webcss = base_url() . 'assets/styles/'; $typcs='text/css';
-		$webjsc = base_url() . 'assets/scripts/'; $typjs='text/javascript';
-
-		$linkwebcss = array('type'=>$typcs,'rel'=>'stylesheet','href' => $pathcss.'bootstrap-theme-cosmo.css?'.time()); // script de css sin tener que especificar clases en cada tag
-		$linkwebcssjs = array('type'=>$typjs,'src' => $pathjsc.'bootstrap-theme-cosmo.js?'.time()); // script de css sin tener que especificar clases en cada tag
-
-
-	echo doctype('xhtml1-trans'), PHP_EOL,'<html xmlns="http://www.w3.org/1999/xhtml">', PHP_EOL;
-	echo '<head>', PHP_EOL;
-		echo meta($meta);
-		echo link_tag($linkappcss);		// link css estilo apariencia sin especificar clases en cada tag
-		echo script_tag($linkappcssjs);
-		echo link_tag($linkpickathingcss);		// link css estilo apariencia para poder llenar los combos select con input search
-		echo link_tag($vanilladatatablescss);		// link css estilo apariencia para poder llenar los combos select con input search
-		echo script_tag($linkdatepickerurl);	// comportamiento de selector de fechas sin usar jquery, 1005 compatible con cualqueir navegador
-		echo link_tag($linkwebcss);		// link css estilo apariencia sin especificar clases en cada tag
-		echo script_tag($linkwebcssjs);
-	echo '</head>', PHP_EOL;
+		echo '';
 	?>
-	<body onload = 'checkAvailable()' > <!-- check browsers and denied the non-standard -->
-		<div id="menu" class="menu ">
-			<center>
-				<?php if( isset($menu)) echo $menu.PHP_EOL ?>
-			</center>
-		</div>
-	<center>
 
+
+<?=doctype('html5'), PHP_EOL?>
+<html>
+<head>
+<title><?=$page_title?></title>
+<?php echo meta($meta) ?>
+<?php foreach($page_css as $css) echo '<link rel="stylesheet" type="text/css" href="'.base_url(). '/assets/css/'.$css.'">'.PHP_EOL;?>
+<link rel="shortcut icon" href="<?=base_url()?>/assets/images/tijerazo.jpg" type="image/x-icon">
+</head>
+	<body onload = 'checkAvailable()' > <!-- check browsers and denied the non-standard -->
+
+	<nav class="navbar is-fixed-top">
+	    <div class="navbar-brand is-justify-content-space-between">
+		<a class="navbar-item">
+		    <figure class="image">
+			<img class="is-rounded" src="<?=base_url()?>/assets/images/logo.jpg" alt="Tijerazo">
+		    </figure>
+		</a>
+
+		<div class="is-flex">
+			<!-- init info id only for mobile and minor view media less than 900px -->
+		    <div class="navbar-item is-hidden-desktop">
+			<span class="mr-3">ID: 23127872</span>
+			<span class="icon">
+			    <i class="fas fa-user"></i>
+			</span>
+		    </div>
+
+		    <a class="navbar-item is-hidden-desktop" id="navbar-bars">
+			<span class="icon">
+			    <i></i>
+			</span>
+		    </a>
+			<!-- end info id only for mobile and minor view media less than 900px -->
+		</div>
+	    </div>
+
+	    <div class="navbar-menu" id="navbar-menu">
+		<div class="navbar-end">
+			<!-- init info id only for desktop view media mayor of 1024px -->
+		    <div class="navbar-item is-hidden-touch">
+			<span class="mr-3">ID: 23127872</span>
+			<span class="icon">
+			    <i class="fas fa-user"></i>
+			</span>
+		    </div>
+			<!-- end info id only for desktop view media mayor of 1024px -->
+		    
+		    <div class="navbar-item">
+			<div class="field is-grouped">
+			    <div class="control">
+				<a href="javascript:void(0);" class="button">
+				    <span>Iniciar sesión</span>
+				</a>
+			    </div>
+
+			    <div class="control">
+				<a href="javascript:void(0);" class="button is-success">
+				    <span>Registrarme</span>
+				</a>
+			    </div>
+			</div>
+		    </div>
+		</div>
+	    </div>
+	</nav>

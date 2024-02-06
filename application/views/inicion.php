@@ -1,9 +1,7 @@
-	<h1>Welcome/Bienvenido a VNX Codeigniter</h1>
-	<p >Ejemplo de login con imap</p>
-	<?php
-	$errormesag = 'Sin novedades';
+<?php
+	$errormesag = '';
 	if($this->session->flashdata("error")){
-		$errormesag = $this->session->flashdata("error");
+		$errormesag = $this->session->flashdata("error"); //horrorific way but i am into a hurry @diazvictor so shut up!
 	}
 	$formopen = form_open("Indexauth/auth/login", array('method'=> 'post', 'class' => 'needs-validation w-75 mx-auto my-auto'));
 		echo br().PHP_EOL;  // genera neuva linea en codigo html al navegador
