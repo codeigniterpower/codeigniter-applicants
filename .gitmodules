@@ -1,7 +1,7 @@
 [submodule "vendor/codeigniter3"]
 	path = vendor/codeigniter3
-	url = https://gitlab.com/codeigniterpower/codeigniterpower
+	url = https://codeberg.orgdeigniterpower/codeigniterpower
 [submodule "vendor/codeigniter2"]
 	path = vendor/codeigniter2
-	url = https://gitlab.com/codeigniterpower/codeigniterpower
+	url = https://codeberg.org/codeigniterpower/codeigniterpower
 	branch = codeigniter2
