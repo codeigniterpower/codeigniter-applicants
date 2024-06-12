@@ -5,6 +5,7 @@ class Indexhome extends CP_Controller {
 	function __construct()
 	{
 		parent::__construct();
+		log_message('info','sesion '.print_r($this->session->userdata('userdata'),TRUE));
 		$this->checksession();
 	}
 

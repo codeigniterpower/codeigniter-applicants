@@ -45,9 +45,11 @@ class Indexauth extends CP_Controller {
 			
 			$authmode = config_item('auth_type');
 			
-			if($authmode == 'dummy' AND (ENVIRONMENT !== 'production'))
+			$authmode = FALSE;
+			if ($rs_access AND $ap_access)
 				$authmode = TRUE;
-			else if ($rs_access AND $ap_access)
+
+			if($authmode == 'dummy' AND (ENVIRONMENT !== 'production'))
 				$authmode = TRUE;
 		}
 

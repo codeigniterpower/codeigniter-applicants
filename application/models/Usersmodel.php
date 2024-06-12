@@ -89,6 +89,7 @@ class Usersmodel extends CI_Model
 
 		$this->load->database();
 		$query = $this->db->get_where('nom_user_registers', array('email'=>$username, 'userpass'=>$password));
+		log_message('info', __METHOD__ .' query ended with '.print_r($query,TRUE));
 		$array_result = $query->row_array();
 
 		if(is_countable($array_result))
@@ -117,6 +118,7 @@ class Usersmodel extends CI_Model
 
 		$config = array('plain'=> TRUE, 'username' => $username, 'password' => $password);
 		$this->load->library('Imap', $config);
+		log_message('info', __METHOD__ .' imap load with '.print_r($config,TRUE));
 		$valid  = $this->imap->connect($config);
 
 		if($valid)
